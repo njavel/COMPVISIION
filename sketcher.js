@@ -95,15 +95,12 @@ let sketch = function (p) {
       p.translate(p.width - handFeature.x * p.width, handFeature.y * p.height, 0);
       p.scale(15);
       //p.rotateY(180);
-      p.rotateX(360);
-      p.normalMaterial();
-      p.model(nails);
 
       switch (curPoint) {
         case 0:
-          p.ellipse(x,y,5,5);
+          p.ellipse(0,0,5,5);
           p.fill(255, 187, 0);
-          p.text("pangangalaga sa sarili",x,y,z);
+          p.text("pangangalaga sa sarili",0,0);
         break;
 
       p.pop();
