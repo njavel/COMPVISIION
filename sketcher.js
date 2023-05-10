@@ -5,9 +5,17 @@
 let sketch = function (p) {
   let font;
   let img;
+  let centerskull;
+  let righteye;
+  let lefteye;
 
   p.preload = function () {
     font = p.loadFont("Poppins-Medium.ttf");
+    img = p.loadImage('yea.png');
+    centerskull = p.loadImage('centerskull.png');
+    righteye = p.loadImage('righteye.png');
+    leteye = p.loadImage('lefteye.png');
+
   };
 
   p.setup = function () {
@@ -62,13 +70,75 @@ let sketch = function (p) {
       p.translate(p.width - poseFeature.x * p.width, poseFeature.y * p.height, 0);
       p.scale(5);
       p.normalMaterial();
+      p.textSize(5);
 
       // a more efficient if/else thingy (https://www.w3schools.com/js/js_switch.asp)
 
       switch (curPoint) {
-        case 3:
-         
+
+        case 0:
+          p.ellipse(0,0,5,5);
+          p.fill(255, 187, 0);
+          p.text("center skull",0,0);
+          p.scale(.02);
+          p.image(centerskull,0,0);
         break;
+
+        case 3:
+          p.ellipse(0,0,5,5);
+          p.fill(255, 187, 0);
+          p.text("right eye",0,0);
+          p.scale(.02);
+          p.image(righteye,0,0);
+        break;
+
+        case 6:
+          p.ellipse(0,0,5,5);
+          p.fill(255, 187, 0);
+          p.text("left eye",0,0);
+          p.scale(.02);
+          p.image(lefteye,0,0);
+        break;
+
+        case 7:
+          p.ellipse(0,0,5,5);
+          p.fill(255, 187, 0);
+          p.text("right temple",0,0);
+        break;
+
+        case 8:
+          p.ellipse(0,0,5,5);
+          p.fill(255, 187, 0);
+          p.text("left temple",0,0);
+        break;
+
+        case 11:
+          p.ellipse(0,0,5,5);
+          p.fill(255, 187, 0);
+          p.text("right shoulder",-20,0);
+          p.scale(.05);
+          //p.image(img,0,0);
+        break;
+
+        case 12:
+          p.ellipse(0,0,5,5);
+          p.fill(255, 187, 0);
+          p.text("left shoulder",0,0);
+        break;
+
+        case 25:
+          p.ellipse(0,0,5,5);
+          p.fill(255, 187, 0);
+          p.text("right knee",0,0);
+        break;
+
+        case 26:
+          p.ellipse(0,0,5,5);
+          p.fill(255, 187, 0);
+          p.text("left knee",0,0);
+        break;
+
+
       }
       p.pop();
     }
@@ -93,14 +163,33 @@ let sketch = function (p) {
       p.fill(255, 0, 255);
       p.push();
       p.translate(p.width - handFeature.x * p.width, handFeature.y * p.height, 0);
-      p.scale(15);
+      p.scale(5);
+      p.textSize(5);
       //p.rotateY(180);
 
       switch (curPoint) {
         case 0:
           p.ellipse(0,0,5,5);
           p.fill(255, 187, 0);
-          p.text("pangangalaga sa sarili",0,0);
+          p.text("hibitch",0,0);
+        break;
+
+        case 4:
+          p.ellipse(0,0,5,5);
+          p.fill(255, 187, 0);
+          p.text("hibitch",0,0);
+        break;
+
+        case 8:
+          p.ellipse(0,0,5,5);
+          p.fill(255, 187, 0);
+          p.text("hibitch",0,0);
+        break;
+
+        case 12:
+          p.ellipse(0,0,5,5);
+          p.fill(255, 187, 0);
+          p.text("hibitch",0,0);
         break;
 
       p.pop();
@@ -119,8 +208,8 @@ let sketch = function (p) {
 
    // p.text(z.toFixed(3), x, y, z);
       p.fill(255, 187, 0);
-      p.text("pangangalaga sa sarili", x, y, z);
-      p.textSize(15);
+      p.text("hey bitch", x, y, z);
+      p.textSize(10);
 
       // 1calculate how far the hand is from the camera by calculating the distance between keypoints 9 and 13 (base of middle and ring finger)
       if (i == 9 || i == 13) {
